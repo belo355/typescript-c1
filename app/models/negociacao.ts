@@ -7,8 +7,7 @@ export class Negociacao {
         {}; 
 
     get data(): Date {
-        const data = new Date(this._data.getTime()); //defencivo aqui 
-        return this.data; 
+        return new Date(this._data.getTime()); //defencivo aqui  
     }
     
     get volume(): number{
