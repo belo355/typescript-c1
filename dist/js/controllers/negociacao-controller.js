@@ -14,8 +14,8 @@ export class NegociacaoController {
     }
     adiciona() {
         this.criaNegociacao();
-        this.menssagemView.update("Negociacao adicionada com sucesso!");
         this.negociacoesView.update(this.listaNegociacoes);
+        this.menssagemView.update("Negociação adicionada com sucesso!");
         this.limparFormulario();
     }
     criaNegociacao() {
