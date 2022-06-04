@@ -17,7 +17,7 @@ export class NegociacoesView extends View<Negociacoes> {
        ${model.lista().map(neg => {
         return `
         <tr>
-          <td>${new Intl.DateTimeFormat().format(neg.data)}</td>
+          <td>${this.handleDate(neg.data)}</td>
           <td>${neg.quantidade}</td>
           <td>${neg.valor}</td>
         </tr>
@@ -26,6 +26,10 @@ export class NegociacoesView extends View<Negociacoes> {
       </tbody>
     </table>
     `
+  }
+
+  private handleDate(model: Date){
+    return new Intl.DateTimeFormat().format(model); 
   }
 
 }
