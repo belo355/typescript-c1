@@ -34,10 +34,11 @@ export class NegociacaoController {
 
     private criaNegociacao(): Negociacao {
         const exp = /-/g;
-        const date = new Date(this.inputData.value.replace(exp, ","));
-        const quantidade = parseInt(this.inputQuantidade.value);
-        const valor = parseFloat(this.inputValor.value);
-        return new Negociacao(date, quantidade, valor);
+        return new Negociacao(
+            new Date(this.inputData.value.replace(exp, ",")), 
+            parseInt(this.inputQuantidade.value), 
+            parseFloat(this.inputValor.value) 
+        )
     }
 
     private adicionaListagemNegociacoes(negociacao: Negociacao) {
@@ -52,7 +53,6 @@ export class NegociacaoController {
     }
 
     private handleDateUtil(model: Negociacao): boolean {
-        return model.data.getDay() > Dayofweek.SUNDAY 
-        && model.data.getDay() < Dayofweek.SATURDAY;
+        return model.data.getDay() > Dayofweek.SUNDAY && model.data.getDay() < Dayofweek.SATURDAY;
     }
 }
