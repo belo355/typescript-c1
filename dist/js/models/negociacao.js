@@ -6,7 +6,7 @@ export class Negociacao {
     }
     ;
     get data() {
-        return new Date(this._data.getTime()); //defencivo aqui  
+        return new Date(this._data.getTime());
     }
     get volume() {
         return this.quantidade * this.valor;

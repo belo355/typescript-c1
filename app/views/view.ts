@@ -3,7 +3,7 @@ export abstract class View<T> {
   protected element: HTMLElement; 
 
   constructor(element: string){
-    this.element = document.querySelector(element); 
+    this.element = <HTMLInputElement>document.querySelector(element); 
   }
 
   protected abstract template(model: T): string; 
